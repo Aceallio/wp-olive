@@ -1,0 +1,163 @@
+/**
+ *
+ * Styles related to the header section go here
+ *
+ */
+
+// Set the navigation bar (navbar) breakpoint
+$nav-breakpoint: $lg; // This should be the same breakpoint as the Bootstrap HTML (usually 'lg')
+
+// Add transparent header styles
+.site-header.transparent {
+	background-color: rgba($secondary, 0.25);
+}
+
+.navbar {
+	padding: 0;
+	position: relative; // For the mini cart
+
+	// Allow flex wrap on desktop (necessary for 2-row navbar)
+	@include sbx-media-min($nav-breakpoint) {
+		&-expand-lg {
+			flex-wrap: wrap;
+		}
+	}
+
+	&-brand {
+		font-size: 1.5rem;
+		margin: 0;
+
+		&--image {
+			height: 3.5rem;
+			width: 7rem;
+		}
+
+		@include sbx-media-min(md) {
+			&--image {
+				height: 3.75rem;
+				width: 7.5rem;
+			}
+		}
+
+		@include sbx-media-min(xl) {
+			&--image {
+				height: 4rem;
+				width: 8rem;
+			}
+		}
+	}
+
+	// Style nav links (Desktop)
+	.nav-link {
+		font-size: 0.8125rem;
+		color: $dark;
+		text-transform: uppercase;
+		letter-spacing: 0.15rem;
+		line-height: 1;
+		font-weight: $font-bold;
+		transition: color $transition-fast ease-out;
+		padding: 0.75rem 0.5rem;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: $primary;
+		}
+	}
+
+	// Style active nav link
+	.active > .nav-link,
+	.nav-link.active {
+		color: $primary;
+	}
+
+	// Style active nav link in dropdown
+	.nav-link.show,
+	.show > .nav-link {
+		color: $primary;
+	}
+
+	// Style nav links (Mobile)
+	@include sbx-media-max($nav-breakpoint) {
+		.nav-item {
+			width: 100%;
+			max-width: 85%;
+			text-align: center;
+			padding: 1rem;
+			border-bottom: 1px solid rgba($secondary, 0.5);
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+
+			.nav-link {
+				font-size: 0.9375rem;
+			}
+		}
+	}
+
+	&-nav {
+		flex-basis: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&-toggler {
+		border: none;
+		padding: 0;
+
+		&:focus,
+		&:active {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+
+	&__icon {
+		color: $dark;
+		i {
+			font-size: 2rem;
+		}
+
+		&--mobile {
+			@include sbx-media-min($nav-breakpoint) {
+				display: none;
+			}
+		}
+	}
+
+	&__top {
+		flex-basis: 100%;
+		.container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		// Mobile layout
+		&--start,
+		&--end {
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+
+			.navbar__icon {
+				&:hover,
+				&:focus,
+				&:active {
+					color: $primary;
+				}
+
+				&:last-of-type {
+					margin-left: 0.5rem;
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		flex-basis: 100%;
+		border-bottom: 1px solid rgba($secondary, 0.5);
+	}
+}

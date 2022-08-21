@@ -1,0 +1,103 @@
+/**
+ *
+ * Styles related to the footer section go here
+ *
+ */
+
+.footer {
+	color: $white;
+	background-color: $black;
+	padding: 3rem 0 0rem;
+	@include sbx-media-min(lg) {
+		padding: 4rem 0 0rem;
+	}
+
+	a {
+		color: $white;
+		text-decoration: none;
+		transition: all $transition-normal;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: $secondary;
+		}
+	}
+
+	&__h4 {
+		font-size: 0.875em;
+		text-transform: uppercase;
+		font-weight: $font-regular;
+		color: $secondary;
+		margin-bottom: 1rem;
+	}
+
+	&__h3 {
+		font-size: 1.5rem;
+		color: $secondary;
+		margin-bottom: 0.75rem;
+	}
+
+	&__logo {
+		.brand-image {
+			width: auto;
+			height: 3.5rem;
+		}
+	}
+
+	&__menu {
+		margin-bottom: 2rem;
+		list-style-type: none;
+		padding: 0;
+		.menu-item {
+			font-size: 1rem;
+			padding: 0.4rem 0;
+		}
+	}
+
+	&__menu--legal {
+		margin: 0;
+		.menu-item {
+			display: inline-block;
+			padding: 0.5rem;
+		}
+	}
+
+	&__middle {
+		position: relative; // for the #scroll-to-top
+	}
+
+	&__contact {
+		display: flex;
+		margin-bottom: 0.5rem;
+
+		&-icon {
+			margin-right: 1rem;
+			color: $secondary;
+		}
+	}
+
+	.social-icons {
+		margin: 0;
+		a {
+			font-size: 2rem;
+			padding: 0.5rem;
+			color: $secondary;
+			transition: color $transition-normal;
+
+			&:hover,
+			&:focus,
+			&:active,
+			&.active {
+				color: $primary;
+			}
+		}
+	}
+
+	&__bottom {
+	}
+
+	.cta-form {
+	}
+}

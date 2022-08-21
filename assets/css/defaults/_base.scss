@@ -1,0 +1,307 @@
+/**
+ *
+ * Styles related to base HTML components
+ * are contained here
+ *
+ */
+
+// -----------------------------------------------
+// Site default styles
+// -----------------------------------------------
+
+:root {
+	font-size: 100%;
+}
+
+html {
+	// scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	font-family: $font-primary;
+	font-weight: $font-regular;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+.h1,
+h2,
+.h2 {
+	span {
+		color: $primary;
+	}
+}
+
+/* Custom selection color */
+*::selection {
+	background-color: $primary;
+	color: $white;
+}
+
+// Styling for link-like behaviour
+[data-link] {
+	cursor: pointer;
+}
+
+// .fas,
+// .fab,
+// .fa {
+// 	color: $primary;
+// }
+
+.site {
+	display: flex;
+	flex-flow: column;
+	flex-direction: column;
+	height: 100%;
+}
+
+// Fills up rest of page if height less than viewport height.
+// Only use in a flex child.
+.flex-fill {
+	flex: 1;
+}
+
+// Default section padding
+.default {
+	padding: 0 0 3rem;
+}
+
+// 404 page styles
+.page-404 {
+	&__title,
+	&__message,
+	&__search-form,
+	&__back-home {
+		text-align: center;
+		margin-bottom: 2.5rem;
+	}
+
+	&__title {
+		margin-top: 3rem;
+	}
+}
+
+// No posts found text styles
+.no-posts {
+	text-align: center;
+}
+
+// -----------------------------------------------
+// Custom Bootstrap button styles
+// -----------------------------------------------
+// This section ADDS custom Bootstrap button styles,
+// that cannot be done in the 'Button styles' section of variables.scss.
+// An example of such custom style will be the 'text-transform' property.
+// To OVERRIDE the default btn styles, please do so in _variables.scss.
+// You can change defaults like padding, border radius and font family.
+
+.btn {
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	// @include sbx-flex(space-between); // add this to span full width
+	align-items: center;
+	// Styles for the Font Awesome icons
+	[class*="fa-"] {
+		font-size: 1.25em;
+		margin-left: 1em;
+	}
+
+	@include sbx-media-max(md) {
+		padding: 0.6rem 0.75rem;
+
+		[class*="fa-"] {
+			margin-left: 0.75em;
+		}
+	}
+}
+
+// Change color of btn-dark
+.btn-dark {
+	$btn-background: $black;
+	$btn-border: $black;
+	$btn-color: $white;
+	@include button-variant($btn-background, $btn-border, $btn-color);
+}
+
+// Change color of btn-outline-dark
+.btn-outline-dark {
+	$btn-color: $black;
+	@include button-outline-variant($btn-color);
+}
+
+// Change btn-light styles
+.btn-light {
+	$btn-background: $white;
+	$btn-border: $black;
+	$btn-color: $dark;
+	@include button-variant($btn-background, $btn-border, $btn-color);
+}
+
+// -----------------------------------------------
+// Site-wide components
+// -----------------------------------------------
+
+// Feature section
+.feature {
+	// text-align: center;
+	// margin: 0 auto;
+	// max-width: $sm;
+	padding: 2rem 1rem;
+	@include sbx-media-min(md) {
+		padding: 3rem 1rem;
+	}
+	@include sbx-media-min(lg) {
+		padding: 4rem 1rem;
+	}
+
+	&__breadcrumbs {
+		text-transform: uppercase;
+		font-size: 0.875rem;
+		letter-spacing: 0.2rem;
+		color: $muted;
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+
+			&:hover,
+			&:focus,
+			&:active {
+				color: $primary;
+			}
+		}
+	}
+
+	&__title {
+		margin: 0.5rem 0;
+		@include sbx-media-min(md) {
+			margin: 1.25rem 1rem;
+		}
+	}
+}
+
+// Scroll to top
+#scroll-to-top {
+	width: 64px;
+	height: 64px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	padding: 0;
+	cursor: pointer;
+	transition: transform $transition-normal ease-out;
+
+	&:hover,
+	&:focus,
+	&:active,
+	&.active {
+		transform: translateY(-5px);
+	}
+
+	svg.scroll-to-top-icon {
+		.circle {
+			fill: none;
+			transition: fill $transition-slow ease;
+		}
+
+		.arrow-up {
+			fill: none;
+			stroke: $secondary;
+			transition: stroke $transition-fast ease;
+		}
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			.circle {
+				fill: $secondary;
+			}
+
+			.arrow-up {
+				stroke: $primary;
+			}
+		}
+	}
+}
+
+// WhatsApp chat
+#sbx-whatsapp {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	cursor: pointer;
+	z-index: 99;
+	background: url("../img/wa-icon.png") no-repeat center center;
+	background-size: contain;
+	height: 3.75rem;
+	width: 3.75rem;
+	transform: scale(0, 0) translateX(10rem);
+	transform-origin: right center;
+	transition: transform 0.2s ease-in-out;
+
+	&.float {
+		transform: translateY(0px);
+		animation: float 6s ease-in-out infinite;
+	}
+
+	&.show {
+		transform: scale(1, 1) translateX(0);
+	}
+
+	.popup {
+		position: absolute;
+		width: contain;
+		left: -8.5rem;
+		top: 1rem;
+		background-color: #25d366;
+		color: #ffffff;
+		line-height: 1;
+		border-radius: 0.625rem;
+		padding: 0.4rem 0.8rem;
+		transform: scale(0, 0);
+		transition: transform 0.1s ease-in-out;
+	}
+
+	&:hover,
+	&:focus,
+	&.greet {
+		.popup {
+			transform: scale(1, 1);
+			animation: wiggle 0.2s 0.3s ease-in-out;
+		}
+	}
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(5deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
