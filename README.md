@@ -1,7 +1,7 @@
-# StarBoxTech WordPress Starter Theme 
-StarBoxTech default minimal WordPress starter theme based on Boostrap 5 framework. This starter theme uses WPGulp, an advanced & extensively documented Gulp WordPress workflow 🔥.
+# AceallTech WordPress Starter Theme 
+AceallTech default minimal WordPress starter theme based on Boostrap 5 framework. This starter theme uses WPGulp, an advanced & extensively documented Gulp WordPress workflow 🔥.
 
-![StarBoxTech WordPress Starter Theme ](screenshot.jpg)
+![AceallTech WordPress Starter Theme ](screenshot.jpg)
 
 ## Built with
 - [WordPress](https://wordpress.org/)
@@ -20,11 +20,11 @@ StarBoxTech default minimal WordPress starter theme based on Boostrap 5 framewor
 ## Install
 **NB:** This is a template repository. **Please do not install a new site on this repository!**
 
-1. To install this starter theme on a new project, create a new repository using this as a template. The steps are detailed in the **Set up Website Theme** section of the SBX WordPress Development Guide.
+1. To install this starter theme on a new project, create a new repository using this as a template. The steps are detailed in the **Set up Website Theme** section of the Aceall WordPress Development Guide.
 2. Once a new repository has been created from this one, run the command below to install the site and tart the frontend development build. Make sure to update the GitHub repository URL to that of the newly-created repository.
 
 ```
-    git clone git@github.com:starboxtech/the_new_project_repo.git
+    git clone git@github.com:Aceallio/the_new_project_repo.git
     composer install
     npm install
     npm audit fix
@@ -98,9 +98,9 @@ gulp default
 ```
 
 ## Contributors
-- Osita Ugwueze (@OsitaNathan)
+- Aghogho Etibo
 
 ## License
-Copyright (c) 2022 StarBox Technologies Ltd.
+Copyright (c) 2022 Aceall Technologies Ltd.
 
-For enquiries please contact us at [hello@starboxtech.com](mailto:hello@starboxtech.com).
+For enquiries please contact us at [info@aceall.io](mailto:info@aceall.io).

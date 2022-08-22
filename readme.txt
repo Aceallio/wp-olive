@@ -1,6 +1,6 @@
-=== SBX Starter Theme ===
+=== Aceall Starter Theme ===
 
-Contributors: StarBox Technologies Ltd.
+Contributors: Aceall Technologies Ltd.
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
@@ -10,11 +10,11 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called SBX Starter Theme.
+A starter theme called Aceall Starter Theme.
 
 == Description ==
 
-StarBoxTech default minimal WordPress starter theme based on Boostrap 5 framework. This starter theme uses WPGulp, an advanced & extensively documented Gulp WordPress workflow 🔥.
+AceallTech default minimal WordPress starter theme based on Boostrap 5 framework. This starter theme uses WPGulp, an advanced & extensively documented Gulp WordPress workflow 🔥.
 
 == Installation ==
 
@@ -26,7 +26,7 @@ StarBoxTech default minimal WordPress starter theme based on Boostrap 5 framewor
 
 = Does this theme support any plugins? =
 
-SBX Starter Theme includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Aceall Starter Theme includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
